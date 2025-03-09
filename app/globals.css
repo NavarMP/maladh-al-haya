@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom cursor styles */
+.custom-cursor {
+  @apply fixed pointer-events-none z-50 opacity-0 transition-opacity duration-300;
+}
+
+.custom-cursor.active {
+  @apply opacity-100;
+}
+
+/* Hide cursor on touch devices */
+@media (hover: none) {
+  .custom-cursor {
+    @apply hidden;
+  }
+}
+
+/* Arabic font for brand name */
+.brand-arabic {
+  @apply font-monadi;
+}
+
+/* Animation classes */
+.fade-in {
+  @apply animate-fadeIn;
+}
+
+.slide-up {
+  @apply animate-slideUp;
+}
+
+.slide-down {
+  @apply animate-slideDown;
+}
+
+/* Floating navigation */
+.floating-nav {
+  @apply fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-background/80 backdrop-blur-md rounded-full shadow-lg transition-all duration-300 z-40;
+}
+
+.floating-nav.hidden-nav {
+  @apply -bottom-20;
+}
+
+/* Side menu animation */
+.side-menu {
+  @apply fixed top-0 left-0 h-full w-0 bg-background/90 backdrop-blur-md transition-all duration-300 z-30 overflow-hidden;
+}
+
+.side-menu.open {
+  @apply w-64 md:w-80;
+}
+
+/* Product card hover effects */
+.product-card {
+  @apply transition-all duration-300 hover:shadow-xl hover:scale-[1.02];
+}
+
+/* Tinder-like swipe for featured products */
+.featured-product-container {
+  @apply relative overflow-hidden;
+}
+
+.featured-product {
+  @apply absolute top-0 left-0 w-full transition-all duration-300;
+}
+
+/* PWA install prompt */
+.pwa-prompt {
+  @apply fixed bottom-0 left-0 right-0 bg-background p-4 shadow-lg transform transition-transform duration-300 z-50;
+}
+
+.pwa-prompt.hidden {
+  @apply translate-y-full;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@tailwind utilities;
+
