@@ -12,8 +12,38 @@ import { Badge } from "@/components/ui/badge"
 import { Heart, ShoppingCart, Share2, Star, ThumbsUp, ThumbsDown, ChevronRight, Minus, Plus } from "lucide-react"
 import { useCart } from "@/hooks/use-cart"
 
-// Sample product data (in a real app, this would come from an API)
-const products = {
+// Define product interfaces
+interface Review {
+  id: string;
+  user: string;
+  rating: number;
+  comment: string;
+  date: string;
+}
+
+interface Specifications {
+  Material: string;
+  Color: string;
+  Sizes: string;
+  Care: string;
+  Origin: string;
+}
+
+interface Product {
+  id: string;
+  name: string;
+  price: number;
+  images: string[];
+  category: string;
+  description: string;
+  features: string[];
+  specifications: Specifications;
+  reviews: Review[];
+  relatedProducts: string[];
+}
+
+// Define the products type as a Record with string keys
+const products: Record<string, Product> = {
   "1": {
     id: "1",
     name: "Premium White Kandura",
@@ -71,8 +101,9 @@ export default function ProductPage() {
   const [quantity, setQuantity] = useState(1)
   const [activeTab, setActiveTab] = useState("description")
 
-  // In a real app, you would fetch the product data based on the ID
-  const product = products[id as string] || products["1"] // Fallback to first product if not found
+  // Type the product safely
+  const productId = Array.isArray(id) ? id[0] : id || "1"; // Handle potential array from useParams
+  const product = products[productId] || products["1"] // Fallback to first product if not found
 
   const incrementQuantity = () => {
     setQuantity((prev) => prev + 1)

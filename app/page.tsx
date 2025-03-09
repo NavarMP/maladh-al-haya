@@ -12,11 +12,22 @@ import { Badge } from "@/components/ui/badge"
 import { Heart, ShoppingCart, ChevronRight, ChevronLeft } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useCart } from "@/hooks/use-cart"
-import { usePWA } from "@/hooks/use-pwa"
+// import { usePWA } from "@/hooks/use-pwa"
 import { motion } from "framer-motion"
 
+interface Product {
+  id: string;
+  name: string;
+  price: number;
+  image: string;
+  quantity?: number;
+  category?: string;
+  description?: string;
+  features?: string[];
+}
+
 // Sample featured products
-const featuredProducts = [
+const featuredProducts: Product[] = [
   {
     id: "1",
     name: "Premium White Kandura",
@@ -46,8 +57,13 @@ const featuredProducts = [
   },
 ]
 
+interface Category {
+  name: string;
+  products: Product[];
+}
+
 // Sample categories with products
-const categories = [
+const categories: Category[] = [
   {
     name: "Kandura",
     products: [
@@ -140,7 +156,7 @@ const categories = [
 export default function Home() {
   const { t } = useLanguage()
   const { addItem } = useCart()
-  const { showInstallPrompt } = usePWA()
+  // const { showInstallPrompt } = usePWA()
   const [currentFeaturedIndex, setCurrentFeaturedIndex] = useState(0)
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
@@ -174,7 +190,7 @@ export default function Home() {
     }
   }
 
-  const addToCart = (product: any) => {
+  const addToCart = (product: Product) => {
     addItem({
       id: product.id,
       name: product.name,
@@ -195,53 +211,56 @@ export default function Home() {
         onTouchEnd={handleTouchEnd}
       >
         {featuredProducts.map((product, index) => (
-          <motion.div
-            key={product.id}
-            className={cn(
-              "absolute inset-0 flex flex-col md:flex-row items-center",
-              index === currentFeaturedIndex ? "opacity-100 z-10" : "opacity-0 z-0",
-            )}
-            initial={{ opacity: 0, x: index > currentFeaturedIndex ? 100 : -100 }}
-            animate={{
-              opacity: index === currentFeaturedIndex ? 1 : 0,
-              x: index === currentFeaturedIndex ? 0 : index > currentFeaturedIndex ? 100 : -100,
-            }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="w-full md:w-1/2 h-1/2 md:h-full relative">
-              <Image
-                src={product.image || "/placeholder.svg"}
-                alt={product.name}
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-            <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center p-8 bg-gradient-to-r from-background/90 to-background">
-              <div className="max-w-md space-y-6">
-                <Badge className="mb-2">{product.category}</Badge>
-                <h1 className="text-4xl font-bold tracking-tight">{product.name}</h1>
-                <p className="text-muted-foreground">{product.description}</p>
-                <ul className="space-y-2">
-                  {product.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-primary"></span>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-2xl font-bold">₹{product.price.toLocaleString()}</p>
-                <div className="flex gap-4">
-                  <Button onClick={() => addToCart(product)}>
-                    <ShoppingCart className="mr-2 h-4 w-4" />
-                    {t("addToCart")}
-                  </Button>
-                  <Button variant="outline">{t("buyNow")}</Button>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        ))}
+  <motion.div
+    key={product.id}
+    className={cn(
+      "absolute inset-0 flex flex-col md:flex-row items-center",
+      index === currentFeaturedIndex ? "opacity-100 z-10" : "opacity-0 z-0",
+    )}
+    initial={{ opacity: 0, x: index > currentFeaturedIndex ? 100 : -100 }}
+    animate={{
+      opacity: index === currentFeaturedIndex ? 1 : 0,
+      x: index === currentFeaturedIndex ? 0 : index > currentFeaturedIndex ? 100 : -100,
+    }}
+    transition={{ duration: 0.5 }}
+  >
+    <div className="w-full md:w-1/2 h-1/2 md:h-full relative">
+      <Image
+        src={product.image || "/placeholder.svg"}
+        alt={product.name}
+        fill
+        className="object-cover"
+        priority
+      />
+    </div>
+    <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center p-8 bg-gradient-to-r from-background/90 to-background">
+      <div className="max-w-md space-y-6">
+        <Badge className="mb-2">{product.category}</Badge>
+        <h1 className="text-4xl font-bold tracking-tight">{product.name}</h1>
+        <p className="text-muted-foreground">{product.description}</p>
+        {/* Add conditional rendering for features */}
+        {product.features && (
+          <ul className="space-y-2">
+            {product.features.map((feature, i) => (
+              <li key={i} className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-primary"></span>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+        <p className="text-2xl font-bold">₹{product.price.toLocaleString()}</p>
+        <div className="flex gap-4">
+          <Button onClick={() => addToCart(product)}>
+            <ShoppingCart className="mr-2 h-4 w-4" />
+            {t("addToCart")}
+          </Button>
+          <Button variant="outline">{t("buyNow")}</Button>
+        </div>
+      </div>
+    </div>
+  </motion.div>
+))}
 
         <Button
           variant="ghost"

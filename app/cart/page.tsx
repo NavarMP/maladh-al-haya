@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
 import Link from "next/link"
-import { useLanguage } from "@/components/language-provider"
+// import { useLanguage } from "@/components/language-provider"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
@@ -10,7 +10,7 @@ import { useCart, type CartItem } from "@/hooks/use-cart"
 import { motion } from "framer-motion"
 
 export default function CartPage() {
-  const { t } = useLanguage()
+  // const { t } = useLanguage()
   const { items, removeItem, updateQuantity, clearCart, cartCount } = useCart()
 
   const subtotal = items.reduce((acc, item) => acc + item.price * item.quantity, 0)
@@ -141,7 +141,7 @@ export default function CartPage() {
         <div className="flex flex-col items-center justify-center py-12 text-center">
           <ShoppingBag className="h-16 w-16 text-muted-foreground mb-4" />
           <h2 className="text-2xl font-bold mb-2">Your cart is empty</h2>
-          <p className="text-muted-foreground mb-8">Looks like you haven't added anything to your cart yet.</p>
+          <p className="text-muted-foreground mb-8">Looks like you have not added anything to your cart yet.</p>
           <Link href="/products">
             <Button>Start Shopping</Button>
           </Link>

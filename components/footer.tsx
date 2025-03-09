@@ -1,11 +1,11 @@
 "use client"
 
 import Link from "next/link"
-import { useLanguage } from "./language-provider"
+// import { useLanguage } from "./language-provider"
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react"
 
 export default function Footer() {
-  const { t } = useLanguage()
+  // const { t } = useLanguage()
 
   return (
     <footer className="bg-muted/30 pt-12 pb-6 mt-12">

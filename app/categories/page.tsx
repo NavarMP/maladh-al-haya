@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useLanguage } from "@/components/language-provider"
+// import { useLanguage } from "@/components/language-provider"
 import { Card, CardContent } from "@/components/ui/card"
 import { motion } from "framer-motion"
 
@@ -101,7 +101,7 @@ const categories = [
 ]
 
 export default function CategoriesPage() {
-  const { t } = useLanguage()
+  // const { t } = useLanguage()
 
   return (
     <div className="container py-8">

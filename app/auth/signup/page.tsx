@@ -5,7 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { useLanguage } from "@/components/language-provider"
+// import { useLanguage } from "@/components/language-provider"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -15,7 +15,7 @@ import { Separator } from "@/components/ui/separator"
 import { motion } from "framer-motion"
 
 export default function SignupPage() {
-  const { t } = useLanguage()
+  // const { t } = useLanguage()
   const router = useRouter()
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")

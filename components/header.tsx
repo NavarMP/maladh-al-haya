@@ -15,7 +15,9 @@ import { useSideMenu } from "@/hooks/use-side-menu"
 import { useCart } from "@/hooks/use-cart"
 
 export default function Header() {
-  const { t, dir } = useLanguage()
+  const { t, 
+    // dir 
+  } = useLanguage()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const pathname = usePathname()

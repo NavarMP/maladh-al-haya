@@ -5,11 +5,11 @@ import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { useLanguage } from "./language-provider"
+// import { useLanguage } from "./language-provider"
 
 export function ModeToggle() {
   const { setTheme } = useTheme()
-  const { t } = useLanguage()
+  // const { t } = useLanguage()
 
   return (
     <DropdownMenu>

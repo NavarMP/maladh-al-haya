@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button"
 import { X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { usePWA } from "@/hooks/use-pwa"
-import { useLanguage } from "./language-provider"
+// import { useLanguage } from "./language-provider"
 
 export default function PWAInstallPrompt() {
   const { showPrompt, showInstallPrompt, dismissPrompt } = usePWA()
-  const { t } = useLanguage()
+  // const { t } = useLanguage()
 
   return (
     <div className={cn("pwa-prompt", !showPrompt && "hidden")}>
