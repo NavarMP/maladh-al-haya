@@ -22,7 +22,7 @@ const monadi = localFont({
 
 export const metadata: Metadata = {
   title: "ملاذ الحياء | Maladh Al Haya",
-  description: "Islamic clothing and items for Muslims and Islamic students",
+  description: "Islamic clothing and items for Muslims.",
   manifest: "/manifest.json",
 }
 

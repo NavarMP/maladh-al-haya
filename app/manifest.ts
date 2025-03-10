@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Maladh Al Haya",
     short_name: "Maladh",
-    description: "Islamic clothing and items for Muslims and Islamic students",
+    description: "Islamic clothing and items for Muslims.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
