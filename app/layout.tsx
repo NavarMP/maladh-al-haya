@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import localFont from "next/font/local"
 import "./globals.css"
-// import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/theme-provider"
 import { LanguageProvider } from "@/components/language-provider"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
@@ -38,7 +38,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icon-192x192.png" />
       </head>
       <body className={`${inter.variable} ${monadi.variable} font-sans`}>
-        {/* <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange> */}
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <LanguageProvider>
             <CursorEffect />
             <div className="relative min-h-screen flex flex-col">
@@ -50,7 +50,7 @@ export default function RootLayout({
             </div>
             <Toaster />
           </LanguageProvider>
-        {/* </ThemeProvider> */}
+        </ThemeProvider>
       </body>
     </html>
   )

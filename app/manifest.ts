@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next"
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Maladh Al Haya",
-    short_name: "Maladh",
+    short_name: "Alhaya",
     description: "Islamic clothing and items for Muslims.",
     start_url: "/",
     display: "standalone",

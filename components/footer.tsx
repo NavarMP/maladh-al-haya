@@ -119,15 +119,15 @@ export default function Footer() {
           <div>
             <h3 className="font-medium mb-4">Contact</h3>
             <ul className="space-y-2 text-sm">
-              <li className="text-muted-foreground">123 Islamic Street, Dubai, UAE</li>
+              <li className="text-muted-foreground">Kerala, India</li>
               <li>
                 <a href="tel:+971123456789" className="text-muted-foreground hover:text-primary">
-                  +971 12 345 6789
+                  +91 9746 902268
                 </a>
               </li>
               <li>
                 <a href="mailto:info@maladhalhaya.com" className="text-muted-foreground hover:text-primary">
-                  info@maladhalhaya.com
+                  navarmp@gmail.com
                 </a>
               </li>
             </ul>
