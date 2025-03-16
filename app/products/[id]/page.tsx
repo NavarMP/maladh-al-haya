@@ -14,32 +14,32 @@ import { useCart } from "@/hooks/use-cart"
 
 // Define product interfaces
 interface Review {
-  id: string;
-  user: string;
-  rating: number;
-  comment: string;
-  date: string;
+  id: string
+  user: string
+  rating: number
+  comment: string
+  date: string
 }
 
 interface Specifications {
-  Material: string;
-  Color: string;
-  Sizes: string;
-  Care: string;
-  Origin: string;
+  Material: string
+  Color: string
+  Sizes: string
+  Care: string
+  Origin: string
 }
 
 interface Product {
-  id: string;
-  name: string;
-  price: number;
-  images: string[];
-  category: string;
-  description: string;
-  features: string[];
-  specifications: Specifications;
-  reviews: Review[];
-  relatedProducts: string[];
+  id: string
+  name: string
+  price: number
+  images: string[]
+  category: string
+  description: string
+  features: string[]
+  specifications: Specifications
+  reviews: Review[]
+  relatedProducts: string[]
 }
 
 // Define the products type as a Record with string keys
@@ -49,10 +49,10 @@ const products: Record<string, Product> = {
     name: "Premium White Kandura",
     price: 1299,
     images: [
-      "/placeholder.svg?height=600&width=400",
-      "/placeholder.svg?height=600&width=400",
-      "/placeholder.svg?height=600&width=400",
-      "/placeholder.svg?height=600&width=400",
+      "/placeholder.svg?height=300&width=300",
+      "/placeholder.svg?height=300&width=300",
+      "/placeholder.svg?height=300&width=300",
+      "/placeholder.svg?height=300&width=300",
     ],
     category: "kandura",
     description:
@@ -102,7 +102,7 @@ export default function ProductPage() {
   const [activeTab, setActiveTab] = useState("description")
 
   // Type the product safely
-  const productId = Array.isArray(id) ? id[0] : id || "1"; // Handle potential array from useParams
+  const productId = Array.isArray(id) ? id[0] : id || "1" // Handle potential array from useParams
   const product = products[productId] || products["1"] // Fallback to first product if not found
 
   const incrementQuantity = () => {
@@ -164,7 +164,7 @@ export default function ProductPage() {
                 onClick={() => setSelectedImage(index)}
               >
                 <Image
-                  src={image || "/placeholder.svg"}
+                  src={image || "/placeholder.svg?height=300&width=300"}
                   alt={`${product.name} - Image ${index + 1}`}
                   fill
                   className="object-cover"
@@ -367,7 +367,7 @@ export default function ProductPage() {
                 <Card className="product-card overflow-hidden h-full">
                   <div className="relative aspect-square">
                     <Image
-                      src={relatedProduct.image || "/placeholder.svg"}
+                      src={relatedProduct.image || "/placeholder.svg?height=300&width=300"}
                       alt={relatedProduct.name}
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105"

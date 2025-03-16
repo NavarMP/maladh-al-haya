@@ -89,6 +89,22 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     setLanguageState(lang)
     document.documentElement.lang = lang
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr"
+
+    // Force re-render when language changes
+    const htmlElement = document.documentElement
+    if (lang === "ar") {
+      htmlElement.classList.add("rtl")
+      htmlElement.classList.remove("ltr")
+    } else {
+      htmlElement.classList.add("ltr")
+      htmlElement.classList.remove("rtl")
+    }
+
+    // Update the document's text direction
+    document.body.style.direction = lang === "ar" ? "rtl" : "ltr"
+
+    // Force reload to apply RTL/LTR changes properly
+    window.location.reload()
   }
 
   const t = (key: string): string => {
@@ -100,8 +116,22 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }
 
   useEffect(() => {
+    // Set the language on initial load
     document.documentElement.lang = language
     document.documentElement.dir = language === "ar" ? "rtl" : "ltr"
+
+    // Force re-render when language changes
+    const htmlElement = document.documentElement
+    if (language === "ar") {
+      htmlElement.classList.add("rtl")
+      htmlElement.classList.remove("ltr")
+    } else {
+      htmlElement.classList.add("ltr")
+      htmlElement.classList.remove("rtl")
+    }
+
+    // Update the document's text direction
+    document.body.style.direction = language === "ar" ? "rtl" : "ltr"
   }, [language])
 
   return <LanguageContext.Provider value={{ language, setLanguage, t, dir }}>{children}</LanguageContext.Provider>

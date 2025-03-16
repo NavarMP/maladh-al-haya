@@ -46,7 +46,12 @@ export default function CartPage() {
                   <CardContent className="p-4">
                     <div className="flex gap-4">
                       <div className="relative h-24 w-24 rounded-md overflow-hidden">
-                        <Image src={item.image || "/placeholder.svg"} alt={item.name} fill className="object-cover" />
+                        <Image
+                          src={item.image || "/placeholder.svg?height=300&width=300"}
+                          alt={item.name}
+                          fill
+                          className="object-cover"
+                        />
                       </div>
                       <div className="flex flex-1 flex-col justify-between">
                         <div>

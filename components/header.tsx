@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { useLanguage } from "@/components/language-provider"
 import { ModeToggle } from "@/components/mode-toggle"
@@ -13,32 +13,84 @@ import { usePathname } from "next/navigation"
 import { Badge } from "@/components/ui/badge"
 import { useSideMenu } from "@/hooks/use-side-menu"
 import { useCart } from "@/hooks/use-cart"
+import Image from "next/image"
 
 export default function Header() {
-  const { t, 
-    // dir 
+  const {
+    t,
+    // dir
   } = useLanguage()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const pathname = usePathname()
   const { openSideMenu } = useSideMenu()
   const { cartCount } = useCart()
+  
+  // Use useRef to store the timeout ID with proper typing
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+  // Use useRef to store the header element to avoid null checks
+  const headerRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
+    let lastScrollY = window.scrollY
+    let ticking = false
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      const currentScrollY = window.scrollY
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // Set isScrolled based on scroll position
+          setIsScrolled(currentScrollY > 50)
+
+          // Get the header element safely
+          const headerElement = headerRef.current
+          
+          // Only apply transform if header element exists
+          if (headerElement) {
+            // Hide header when scrolling (both up and down)
+            if (Math.abs(currentScrollY - lastScrollY) > 5) {
+              headerElement.style.transform = "translateY(-100%)"
+            }
+
+            lastScrollY = currentScrollY
+            ticking = false
+
+            // Clear previous timeout
+            if (timeoutRef.current) {
+              clearTimeout(timeoutRef.current)
+            }
+
+            // Set timeout to show header when scrolling stops
+            timeoutRef.current = setTimeout(() => {
+              headerElement.style.transform = "translateY(0)"
+            }, 500)
+          }
+        })
+
+        ticking = true
+      }
     }
 
     window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      
+      // Clean up timeout on unmount
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+    }
   }, [])
 
   return (
     <header
+      ref={headerRef}
       className={cn(
         "sticky top-0 z-40 w-full transition-all duration-300",
         isScrolled ? "bg-background/80 backdrop-blur-md shadow-md py-2" : "bg-background py-4",
       )}
+      style={{ transition: "transform 0.3s ease-in-out" }}
     >
       <div className="container flex items-center justify-between">
         <div className="flex items-center gap-4">
@@ -47,8 +99,8 @@ export default function Header() {
             <span className="sr-only">Menu</span>
           </Button>
           <Link href="/" className="flex items-center gap-2">
-            <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold">MH</span>
+            <div className="h-10 w-10 relative">
+              <Image src="/assets/logo.svg" alt="Maladh Al Haya Logo" fill priority />
             </div>
             <div className="flex flex-col">
               <span className="brand-arabic text-xl">ملاذ الحياء</span>
@@ -125,4 +177,3 @@ export default function Header() {
     </header>
   )
 }
-

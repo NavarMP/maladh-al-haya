@@ -31,10 +31,12 @@ export function usePWA() {
       setDeferredPrompt(e as BeforeInstallPromptEvent)
       setIsInstallable(true)
 
-      // Only show prompt on mobile devices and if not previously dismissed
-      if (isMobile && !promptDismissed) {
-        setShowPrompt(true)
-      }
+      // Show prompt after a short delay
+      setTimeout(() => {
+        if (isMobile && !promptDismissed) {
+          setShowPrompt(true)
+        }
+      }, 3000)
     }
 
     const handleAppInstalled = () => {
@@ -47,6 +49,11 @@ export function usePWA() {
     window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt)
     window.addEventListener("appinstalled", handleAppInstalled)
 
+    // Check if app is already installed
+    if (window.matchMedia("(display-mode: standalone)").matches) {
+      setIsInstalled(true)
+    }
+
     return () => {
       window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt)
       window.removeEventListener("appinstalled", handleAppInstalled)
@@ -54,18 +61,28 @@ export function usePWA() {
   }, [isMobile, promptDismissed])
 
   const showInstallPrompt = async () => {
-    if (!deferredPrompt) return
+    if (!deferredPrompt) {
+      // If no deferred prompt is available, try to show the native install prompt
+      alert("Please use your browser's install option to add this app to your home screen.")
+      return
+    }
 
     // Show the install prompt
     deferredPrompt.prompt()
 
-    // Wait for the user to respond to the prompt
-    const { outcome } = await deferredPrompt.userChoice
+    try {
+      // Wait for the user to respond to the prompt
+      const { outcome } = await deferredPrompt.userChoice
 
-    if (outcome === "accepted") {
-      setIsInstalled(true)
-    } else {
-      setPromptDismissed(true)
+      if (outcome === "accepted") {
+        setIsInstalled(true)
+        console.log("User accepted the install prompt")
+      } else {
+        setPromptDismissed(true)
+        console.log("User dismissed the install prompt")
+      }
+    } catch (error) {
+      console.error("Error with install prompt:", error)
     }
 
     // We've used the prompt, and can't use it again, discard it

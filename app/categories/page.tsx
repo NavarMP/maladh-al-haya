@@ -12,91 +12,91 @@ const categories = [
     id: "kandura",
     name: "Kandura",
     description: "Traditional Arabic dress for men",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder.svg?height=300&width=300",
   },
   {
     id: "jubba",
     name: "Jubba",
     description: "Long outer garment worn by Muslim men",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder.svg?height=300&width=300",
   },
   {
     id: "kurta",
     name: "Kurta",
     description: "Loose collarless shirt worn in many regions",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder.svg?height=300&width=300",
   },
   {
     id: "mund",
     name: "Mund",
     description: "Traditional lower garment for men",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder.svg?height=300&width=300",
   },
   {
     id: "turban",
     name: "Turban",
     description: "Traditional head covering for men",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder.svg?height=300&width=300",
   },
   {
     id: "shall",
     name: "Shall",
     description: "Elegant shawl for various occasions",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder.svg?height=300&width=300",
   },
   {
     id: "inners",
     name: "Inners",
     description: "Comfortable inner garments",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder.svg?height=300&width=300",
   },
   {
     id: "abaya",
     name: "Abaya",
     description: "Loose over-garment worn by Muslim women",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder.svg?height=300&width=300",
   },
   {
     id: "parda",
     name: "Parda",
     description: "Traditional covering for modesty",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder.svg?height=300&width=300",
   },
   {
     id: "hijab",
     name: "Hijab",
     description: "Head covering worn by Muslim women",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder.svg?height=300&width=300",
   },
   {
     id: "niqab",
     name: "Niqab",
     description: "Face veil that leaves the eyes uncovered",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder.svg?height=300&width=300",
   },
   {
     id: "fragrance",
     name: "Fragrance",
     description: "Alcohol-free perfumes and fragrances",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder.svg?height=300&width=300",
   },
   {
     id: "quran",
     name: "Quran",
     description: "Holy book of Islam in various editions",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder.svg?height=300&width=300",
   },
   {
     id: "kithabs",
     name: "Kithabs",
     description: "Islamic books and literature",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder.svg?height=300&width=300",
   },
   {
     id: "prayer-mats",
     name: "Prayer Mats",
     description: "Mats used for daily prayers",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder.svg?height=300&width=300",
   },
 ]
 
@@ -119,7 +119,7 @@ export default function CategoriesPage() {
               <Card className="overflow-hidden h-full hover:shadow-lg transition-all duration-300">
                 <div className="relative aspect-square">
                   <Image
-                    src={category.image || "/placeholder.svg"}
+                    src={category.image || "/placeholder.svg?height=300&width=300"}
                     alt={category.name}
                     fill
                     className="object-cover transition-transform duration-300 hover:scale-105"

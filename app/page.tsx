@@ -16,14 +16,14 @@ import { useCart } from "@/hooks/use-cart"
 import { motion } from "framer-motion"
 
 interface Product {
-  id: string;
-  name: string;
-  price: number;
-  image: string;
-  quantity?: number;
-  category?: string;
-  description?: string;
-  features?: string[];
+  id: string
+  name: string
+  price: number
+  image: string
+  quantity?: number
+  category?: string
+  description?: string
+  features?: string[]
 }
 
 // Sample featured products
@@ -32,7 +32,7 @@ const featuredProducts: Product[] = [
     id: "1",
     name: "Premium White Kandura",
     price: 1299,
-    image: "/images/kandura.png",
+    image: "/assets/images/kandura-1.png?height=300&width=300",
     category: "kandura",
     description: "Elegant white kandura made from premium cotton for maximum comfort and style.",
     features: ["100% Cotton", "Hand-stitched", "Breathable fabric", "Traditional design"],
@@ -41,7 +41,7 @@ const featuredProducts: Product[] = [
     id: "2",
     name: "Classic Jubba",
     price: 1499,
-    image: "/images/kandura.png",
+    image: "/assets/images/kandura-1.png?height=300&width=300",
     category: "jubba",
     description: "Classic jubba with modern touches, perfect for daily wear and special occasions.",
     features: ["Premium fabric", "Comfortable fit", "Elegant design", "Multiple sizes available"],
@@ -50,7 +50,7 @@ const featuredProducts: Product[] = [
     id: "3",
     name: "Silk Turban",
     price: 599,
-    image: "/images/kandura.png",
+    image: "/assets/images/kandura-1.png?height=300&width=300",
     category: "turban",
     description: "Luxurious silk turban that adds elegance to your traditional attire.",
     features: ["Pure silk", "Easy to wrap", "Comfortable fit", "Elegant finish"],
@@ -58,8 +58,8 @@ const featuredProducts: Product[] = [
 ]
 
 interface Category {
-  name: string;
-  products: Product[];
+  name: string
+  products: Product[]
 }
 
 // Sample categories with products
@@ -71,25 +71,25 @@ const categories: Category[] = [
         id: "4",
         name: "White Kandura",
         price: 999,
-        image: "/images/kandura.png",
+        image: "/assets/images/kandura-1.png?height=300&width=300",
       },
       {
         id: "5",
         name: "Embroidered Kandura",
         price: 1599,
-        image: "/images/kandura.png",
+        image: "/assets/images/kandura-1.png?height=300&width=300",
       },
       {
         id: "6",
         name: "Premium Kandura",
         price: 1899,
-        image: "/images/kandura.png",
+        image: "/assets/images/kandura-1.png?height=300&width=300",
       },
       {
         id: "7",
         name: "Daily Wear Kandura",
         price: 799,
-        image: "/images/kandura.png",
+        image: "/assets/images/kandura-1.png?height=300&width=300",
       },
     ],
   },
@@ -100,25 +100,25 @@ const categories: Category[] = [
         id: "8",
         name: "Classic Jubba",
         price: 1299,
-        image: "/images/kandura.png",
+        image: "/assets/images/kandura-1.png?height=300&width=300",
       },
       {
         id: "9",
         name: "Modern Jubba",
         price: 1499,
-        image: "/images/kandura.png",
+        image: "/assets/images/kandura-1.png?height=300&width=300",
       },
       {
         id: "10",
         name: "Premium Jubba",
         price: 1899,
-        image: "/placeholder.svg?height=300&width=300",
+        image: "/assets/images/kandura-1.png?height=300&width=300",
       },
       {
         id: "11",
         name: "Casual Jubba",
         price: 999,
-        image: "/placeholder.svg?height=300&width=300",
+        image: "/assets/images/kandura-1.png?height=300&width=300",
       },
     ],
   },
@@ -129,25 +129,26 @@ const categories: Category[] = [
         id: "12",
         name: "Silk Hijab",
         price: 499,
-        image: "/placeholder.svg?height=300&width=300",
+        image: "/assets/images/kandura-1.png?height=300&width=300",
       },
       {
         id: "13",
         name: "Premium Abaya",
         price: 1999,
-        image: "/placeholder.svg?height=300&width=300",
+        image: "/assets/images/kandura-1.png?height=300&width=300",
       },
       {
         id: "14",
         name: "Daily Wear Hijab",
         price: 299,
-        image: "/placeholder.svg?height=300&width=300",
+        image: "/assets/images/kandura-1.png?height=300&width=300",
       },
       {
         id: "15",
         name: "Embroidered Abaya",
         price: 2499,
-        image: "/placeholder.svg?height=300&width=300",
+        image: "/assets/images/kandura-1.png?height=300&width=300",
+        //?height=300&width=300",
       },
     ],
   },
@@ -211,56 +212,56 @@ export default function Home() {
         onTouchEnd={handleTouchEnd}
       >
         {featuredProducts.map((product, index) => (
-  <motion.div
-    key={product.id}
-    className={cn(
-      "absolute inset-0 flex flex-col md:flex-row items-center",
-      index === currentFeaturedIndex ? "opacity-100 z-10" : "opacity-0 z-0",
-    )}
-    initial={{ opacity: 0, x: index > currentFeaturedIndex ? 100 : -100 }}
-    animate={{
-      opacity: index === currentFeaturedIndex ? 1 : 0,
-      x: index === currentFeaturedIndex ? 0 : index > currentFeaturedIndex ? 100 : -100,
-    }}
-    transition={{ duration: 0.5 }}
-  >
-    <div className="w-full md:w-1/2 h-1/2 md:h-full relative">
-      <Image
-        src={product.image || "/placeholder.svg"}
-        alt={product.name}
-        fill
-        className="object-cover"
-        priority
-      />
-    </div>
-    <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center p-8 bg-gradient-to-r from-background/90 to-background">
-      <div className="max-w-md space-y-6">
-        <Badge className="mb-2">{product.category}</Badge>
-        <h1 className="text-4xl font-bold tracking-tight">{product.name}</h1>
-        <p className="text-muted-foreground">{product.description}</p>
-        {/* Add conditional rendering for features */}
-        {product.features && (
-          <ul className="space-y-2">
-            {product.features.map((feature, i) => (
-              <li key={i} className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-primary"></span>
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-        )}
-        <p className="text-2xl font-bold">₹{product.price.toLocaleString()}</p>
-        <div className="flex gap-4">
-          <Button onClick={() => addToCart(product)}>
-            <ShoppingCart className="mr-2 h-4 w-4" />
-            {t("addToCart")}
-          </Button>
-          <Button variant="outline">{t("buyNow")}</Button>
-        </div>
-      </div>
-    </div>
-  </motion.div>
-))}
+          <motion.div
+            key={product.id}
+            className={cn(
+              "absolute inset-0 flex flex-col md:flex-row items-center",
+              index === currentFeaturedIndex ? "opacity-100 z-10" : "opacity-0 z-0",
+            )}
+            initial={{ opacity: 0, x: index > currentFeaturedIndex ? 100 : -100 }}
+            animate={{
+              opacity: index === currentFeaturedIndex ? 1 : 0,
+              x: index === currentFeaturedIndex ? 0 : index > currentFeaturedIndex ? 100 : -100,
+            }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="w-full md:w-1/2 h-1/2 md:h-full relative">
+              <Image
+                src={product.image || "/assets/images/kandura-1.png?height=300&width=300"}
+                alt={product.name}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+            <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center p-8 bg-gradient-to-r from-background/90 to-background">
+              <div className="max-w-md space-y-6">
+                <Badge className="mb-2">{product.category}</Badge>
+                <h1 className="text-4xl font-bold tracking-tight">{product.name}</h1>
+                <p className="text-muted-foreground">{product.description}</p>
+                {/* Add conditional rendering for features */}
+                {product.features && (
+                  <ul className="space-y-2">
+                    {product.features.map((feature, i) => (
+                      <li key={i} className="flex items-center gap-2">
+                        <span className="h-1.5 w-1.5 rounded-full bg-primary"></span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <p className="text-2xl font-bold">₹{product.price.toLocaleString()}</p>
+                <div className="flex gap-4">
+                  <Button onClick={() => addToCart(product)}>
+                    <ShoppingCart className="mr-2 h-4 w-4" />
+                    {t("addToCart")}
+                  </Button>
+                  <Button variant="outline">{t("buyNow")}</Button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
 
         <Button
           variant="ghost"
@@ -326,7 +327,7 @@ export default function Home() {
                   <Card className="product-card overflow-hidden h-full">
                     <div className="relative aspect-square">
                       <Image
-                        src={product.image || "/placeholder.svg"}
+                        src={product.image || "/assets/images/kandura-1.png?height=300&width=300"}
                         alt={product.name}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"

@@ -1,12 +1,12 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['localhost'],
+    domains: ["localhost"],
     minimumCacheTTL: 60,
-    formats: ['image/webp', 'image/avif'],
+    formats: ["image/webp", "image/avif"],
   },
   reactStrictMode: true,
   swcMinify: true,
-};
+}
 
-export default nextConfig;
+export default nextConfig
+
