@@ -166,3 +166,13 @@
 
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Monadi';
+  src: url('/assets/fonts/Monadi-Reguler.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Monadi', sans-serif;
+}

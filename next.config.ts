@@ -1,7 +1,12 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    domains: ['localhost'],
+    minimumCacheTTL: 60,
+    formats: ['image/webp', 'image/avif'],
+  },
+  reactStrictMode: true,
+  swcMinify: true,
 };
 
 export default nextConfig;
