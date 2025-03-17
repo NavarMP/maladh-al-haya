@@ -25,19 +25,19 @@ export default function Footer() {
               Your destination for authentic Islamic clothing and items.
             </p>
             <div className="flex gap-4">
-              <Link href="#" className="text-muted-foreground hover:text-primary">
+              <Link href="https://facebook.com/NavarMP" className="text-muted-foreground hover:text-primary">
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary">
+              <Link href="https://Instagram.com/Navar_MP" className="text-muted-foreground hover:text-primary">
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary">
+              <Link href="https://x.com/Navar_MP" className="text-muted-foreground hover:text-primary">
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary">
+              <Link href="https://Youtube.com/NavarMP" className="text-muted-foreground hover:text-primary">
                 <Youtube className="h-5 w-5" />
                 <span className="sr-only">Youtube</span>
               </Link>
