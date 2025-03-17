@@ -9,25 +9,25 @@ import { motion } from "framer-motion"
 // Sample team members
 const teamMembers = [
   {
-    name: "Mohammed Al-Farsi",
+    name: "Mohammed Navar",
     role: "Founder & CEO",
     image: "/assets/images/kandura-1.png?height=300&width=300",
     bio: "Mohammed founded Maladh Al Haya with a vision to provide high-quality Islamic clothing that combines tradition with modern comfort.",
   },
   {
-    name: "Aisha Rahman",
+    name: "Yamin Abdulla",
     role: "Creative Director",
     image: "/assets/images/kandura-1.png?height=300&width=300",
     bio: "Aisha brings her artistic vision and deep understanding of Islamic fashion to create designs that are both modest and stylish.",
   },
   {
-    name: "Yusuf Khan",
+    name: "Muhammed Nuhman",
     role: "Head of Operations",
     image: "/assets/images/kandura-1.png?height=300&width=300",
     bio: "Yusuf ensures that all operations run smoothly, from production to delivery, maintaining the highest standards of quality.",
   },
   {
-    name: "Fatima Al-Zahra",
+    name: "Hamdan CA",
     role: "Customer Relations",
     image: "/assets/images/kandura-1.png?height=300&width=300",
     bio: "Fatima is dedicated to providing exceptional customer service and ensuring that every customer has a positive experience.",
@@ -77,7 +77,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative h-[400px] rounded-lg overflow-hidden">
-              <Image src="/assets/images/kandura-1.png?height=400&width=600" alt="Our store" fill className="object-cover" />
+              <Image src="/assets/logo.svg?height=400&width=600" alt="Our store" fill className="object-cover" />
             </div>
           </div>
         </motion.section>
