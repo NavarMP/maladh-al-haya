@@ -11,25 +11,25 @@ const teamMembers = [
   {
     name: "Mohammed Navar",
     role: "Founder & CEO",
-    image: "/assets/avatar.svg?height=300&width=300",
+    image: "/assets/images/kandura-1.avif?height=300&width=300",
     bio: "Muhammed Navar founded Maladh Al Haya with a vision to provide high-quality Islamic clothing that combines tradition with modern comfort.",
   },
   {
     name: "Yamin Abdulla",
     role: "Creative Director",
-    image: "/assets/images/kandura-1.png?height=300&width=300",
+    image: "/assets/images/kandura-1.avif?height=300&width=300",
     bio: "Yamin brings her artistic vision and deep understanding of Islamic fashion to create designs that are both modest and stylish.",
   },
   {
     name: "Muhammed Nuhman",
     role: "Head of Operations",
-    image: "/assets/images/kandura-1.png?height=300&width=300",
+    image: "/assets/images/kandura-1.avif?height=300&width=300",
     bio: "Muhammed Nuhman ensures that all operations run smoothly, from production to delivery, maintaining the highest standards of quality.",
   },
   {
     name: "Hamdan CA",
     role: "Customer Relations",
-    image: "/assets/images/kandura-1.png?height=300&width=300",
+    image: "/assets/images/kandura-1.avif?height=300&width=300",
     bio: "Hamdan is dedicated to providing exceptional customer service and ensuring that every customer has a positive experience.",
   },
 ]
@@ -246,12 +246,12 @@ export default function AboutPage() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-bold mb-8 text-center">Meet Our Team</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center" id="team">Meet Our Team</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {teamMembers.map((member, index) => (
               <Card key={index} className="overflow-hidden">
                 <div className="relative aspect-square">
-                  <Image src={member.image || "/assets/images/kandura-1.png"} alt={member.name} fill className="object-cover" />
+                  <Image src={member.image || "/assets/images/kandura-1.avif"} alt={member.name} fill className="object-cover" />
                 </div>
                 <CardContent className="p-4">
                   <h3 className="font-bold text-lg">{member.name}</h3>

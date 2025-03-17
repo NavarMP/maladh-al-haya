@@ -27,14 +27,14 @@ const orders = [
         name: "Premium White Kandura",
         price: 1299,
         quantity: 1,
-        image: "/assets/images/kandura-1.png?height=300&width=300",
+        image: "/assets/images/kandura-1.avif?height=300&width=300",
       },
       {
         id: "3",
         name: "Silk Turban",
         price: 599,
         quantity: 2,
-        image: "/assets/images/kandura-1.png?height=300&width=300",
+        image: "/assets/images/kandura-1.avif?height=300&width=300",
       },
     ],
   },
@@ -49,7 +49,7 @@ const orders = [
         name: "Classic Jubba",
         price: 1499,
         quantity: 1,
-        image: "/assets/images/kandura-1.png?height=300&width=300",
+        image: "/assets/images/kandura-1.avif?height=300&width=300",
       },
     ],
   },
@@ -61,19 +61,19 @@ const wishlist = [
     id: "4",
     name: "White Kandura",
     price: 999,
-    image: "/assets/images/kandura-1.png?height=300&width=300",
+    image: "/assets/images/kandura-1.avif?height=300&width=300",
   },
   {
     id: "8",
     name: "Classic Jubba",
     price: 1299,
-    image: "/assets/images/kandura-1.png?height=300&width=300",
+    image: "/assets/images/kandura-1.avif?height=300&width=300",
   },
   {
     id: "12",
     name: "Silk Hijab",
     price: 499,
-    image: "/assets/images/kandura-1.png?height=300&width=300",
+    image: "/assets/images/kandura-1.avif?height=300&width=300",
   },
 ]
 
@@ -110,7 +110,7 @@ export default function ProfilePage() {
     name: "Mohammed Ahmed",
     email: "mohammed@example.com",
     phone: "+971 50 123 4567",
-    avatar: "/assets/images/kandura-1.png?height=100&width=100",
+    avatar: "/assets/images/kandura-1.avif?height=100&width=100",
   }
 
   const handleLogout = () => {
@@ -128,7 +128,7 @@ export default function ProfilePage() {
           <CardContent className="p-6">
             <div className="flex flex-col items-center mb-6">
               <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4">
-                <Image src={user.avatar || "/assets/images/kandura-1.png"} alt={user.name} fill className="object-cover" />
+                <Image src={user.avatar || "/assets/images/kandura-1.avif"} alt={user.name} fill className="object-cover" />
               </div>
               <h2 className="text-xl font-bold">{user.name}</h2>
               <p className="text-sm text-muted-foreground">{user.email}</p>
@@ -310,7 +310,7 @@ export default function ProfilePage() {
                                 <div key={item.id} className="flex gap-4">
                                   <div className="relative h-20 w-20 rounded-md overflow-hidden flex-shrink-0">
                                     <Image
-                                      src={item.image || "/assets/images/kandura-1.png"}
+                                      src={item.image || "/assets/images/kandura-1.avif"}
                                       alt={item.name}
                                       fill
                                       className="object-cover"
@@ -367,7 +367,7 @@ export default function ProfilePage() {
                         <Card key={item.id} className="overflow-hidden">
                           <div className="relative aspect-square">
                             <Image
-                              src={item.image || "/assets/images/kandura-1.png"}
+                              src={item.image || "/assets/images/kandura-1.avif"}
                               alt={item.name}
                               fill
                               className="object-cover"

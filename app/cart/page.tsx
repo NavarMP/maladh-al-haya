@@ -47,7 +47,7 @@ export default function CartPage() {
                     <div className="flex gap-4">
                       <div className="relative h-24 w-24 rounded-md overflow-hidden">
                         <Image
-                          src={item.image || "/assets/images/kandura-1.png?height=300&width=300"}
+                          src={item.image || "/assets/images/kandura-1.avif?height=300&width=300"}
                           alt={item.name}
                           fill
                           className="object-cover"

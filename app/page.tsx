@@ -32,7 +32,7 @@ const featuredProducts: Product[] = [
     id: "1",
     name: "Premium White Kandura",
     price: 1299,
-    image: "/assets/images/kandura-1.png?height=300&width=300",
+    image: "/assets/images/kandura-1.avif?height=300&width=300",
     category: "kandura",
     description: "Elegant white kandura made from premium cotton for maximum comfort and style.",
     features: ["100% Cotton", "Hand-stitched", "Breathable fabric", "Traditional design"],
@@ -41,7 +41,7 @@ const featuredProducts: Product[] = [
     id: "2",
     name: "Classic Jubba",
     price: 1499,
-    image: "/assets/images/kandura-1.png?height=300&width=300",
+    image: "/assets/images/kandura-1.avif?height=300&width=300",
     category: "jubba",
     description: "Classic jubba with modern touches, perfect for daily wear and special occasions.",
     features: ["Premium fabric", "Comfortable fit", "Elegant design", "Multiple sizes available"],
@@ -50,7 +50,7 @@ const featuredProducts: Product[] = [
     id: "3",
     name: "Silk Turban",
     price: 599,
-    image: "/assets/images/kandura-1.png?height=300&width=300",
+    image: "/assets/images/kandura-1.avif?height=300&width=300",
     category: "turban",
     description: "Luxurious silk turban that adds elegance to your traditional attire.",
     features: ["Pure silk", "Easy to wrap", "Comfortable fit", "Elegant finish"],
@@ -71,25 +71,25 @@ const categories: Category[] = [
         id: "4",
         name: "White Kandura",
         price: 999,
-        image: "/assets/images/kandura-1.png?height=300&width=300",
+        image: "/assets/images/kandura-1.avif?height=300&width=300",
       },
       {
         id: "5",
         name: "Embroidered Kandura",
         price: 1599,
-        image: "/assets/images/kandura-1.png?height=300&width=300",
+        image: "/assets/images/kandura-1.avif?height=300&width=300",
       },
       {
         id: "6",
         name: "Premium Kandura",
         price: 1899,
-        image: "/assets/images/kandura-1.png?height=300&width=300",
+        image: "/assets/images/kandura-1.avif?height=300&width=300",
       },
       {
         id: "7",
         name: "Daily Wear Kandura",
         price: 799,
-        image: "/assets/images/kandura-1.png?height=300&width=300",
+        image: "/assets/images/kandura-1.avif?height=300&width=300",
       },
     ],
   },
@@ -100,25 +100,25 @@ const categories: Category[] = [
         id: "8",
         name: "Classic Jubba",
         price: 1299,
-        image: "/assets/images/kandura-1.png?height=300&width=300",
+        image: "/assets/images/kandura-1.avif?height=300&width=300",
       },
       {
         id: "9",
         name: "Modern Jubba",
         price: 1499,
-        image: "/assets/images/kandura-1.png?height=300&width=300",
+        image: "/assets/images/kandura-1.avif?height=300&width=300",
       },
       {
         id: "10",
         name: "Premium Jubba",
         price: 1899,
-        image: "/assets/images/kandura-1.png?height=300&width=300",
+        image: "/assets/images/kandura-1.avif?height=300&width=300",
       },
       {
         id: "11",
         name: "Casual Jubba",
         price: 999,
-        image: "/assets/images/kandura-1.png?height=300&width=300",
+        image: "/assets/images/kandura-1.avif?height=300&width=300",
       },
     ],
   },
@@ -129,25 +129,25 @@ const categories: Category[] = [
         id: "12",
         name: "Silk Hijab",
         price: 499,
-        image: "/assets/images/kandura-1.png?height=300&width=300",
+        image: "/assets/images/kandura-1.avif?height=300&width=300",
       },
       {
         id: "13",
         name: "Premium Abaya",
         price: 1999,
-        image: "/assets/images/kandura-1.png?height=300&width=300",
+        image: "/assets/images/kandura-1.avif?height=300&width=300",
       },
       {
         id: "14",
         name: "Daily Wear Hijab",
         price: 299,
-        image: "/assets/images/kandura-1.png?height=300&width=300",
+        image: "/assets/images/kandura-1.avif?height=300&width=300",
       },
       {
         id: "15",
         name: "Embroidered Abaya",
         price: 2499,
-        image: "/assets/images/kandura-1.png?height=300&width=300",
+        image: "/assets/images/kandura-1.avif?height=300&width=300",
         //?height=300&width=300",
       },
     ],
@@ -227,7 +227,7 @@ export default function Home() {
           >
             <div className="w-full md:w-1/2 h-1/2 md:h-full relative">
               <Image
-                src={product.image || "/assets/images/kandura-1.png?height=300&width=300"}
+                src={product.image || "/assets/images/kandura-1.avif?height=300&width=300"}
                 alt={product.name}
                 fill
                 className="object-cover"
@@ -327,7 +327,7 @@ export default function Home() {
                   <Card className="product-card overflow-hidden h-full">
                     <div className="relative aspect-square">
                       <Image
-                        src={product.image || "/assets/images/kandura-1.png?height=300&width=300"}
+                        src={product.image || "/assets/images/kandura-1.avif?height=300&width=300"}
                         alt={product.name}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
