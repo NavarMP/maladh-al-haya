@@ -11,26 +11,26 @@ const teamMembers = [
   {
     name: "Mohammed Navar",
     role: "Founder & CEO",
-    image: "/assets/images/kandura-1.png?height=300&width=300",
-    bio: "Mohammed founded Maladh Al Haya with a vision to provide high-quality Islamic clothing that combines tradition with modern comfort.",
+    image: "/assets/avatar.svg?height=300&width=300",
+    bio: "Muhammed Navar founded Maladh Al Haya with a vision to provide high-quality Islamic clothing that combines tradition with modern comfort.",
   },
   {
     name: "Yamin Abdulla",
     role: "Creative Director",
     image: "/assets/images/kandura-1.png?height=300&width=300",
-    bio: "Aisha brings her artistic vision and deep understanding of Islamic fashion to create designs that are both modest and stylish.",
+    bio: "Yamin brings her artistic vision and deep understanding of Islamic fashion to create designs that are both modest and stylish.",
   },
   {
     name: "Muhammed Nuhman",
     role: "Head of Operations",
     image: "/assets/images/kandura-1.png?height=300&width=300",
-    bio: "Yusuf ensures that all operations run smoothly, from production to delivery, maintaining the highest standards of quality.",
+    bio: "Muhammed Nuhman ensures that all operations run smoothly, from production to delivery, maintaining the highest standards of quality.",
   },
   {
     name: "Hamdan CA",
     role: "Customer Relations",
     image: "/assets/images/kandura-1.png?height=300&width=300",
-    bio: "Fatima is dedicated to providing exceptional customer service and ensuring that every customer has a positive experience.",
+    bio: "Hamdan is dedicated to providing exceptional customer service and ensuring that every customer has a positive experience.",
   },
 ]
 
