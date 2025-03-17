@@ -77,7 +77,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative h-[400px] rounded-lg overflow-hidden">
-              <Image src="/assets/images/kandura-1.png?height=400&width=600" alt="Our store" fill className="object-cover" />
+              <Image src="/assets/logo.svg?height=400&width=600" alt="Our store" fill className="object-cover" />
             </div>
           </div>
         </motion.section>
