@@ -49,10 +49,10 @@ const products: Record<string, Product> = {
     name: "Premium White Kandura",
     price: 1299,
     images: [
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
+      "/assets/images/kandura-1.png?height=300&width=300",
+      "/assets/images/kandura-1.png?height=300&width=300",
+      "/assets/images/kandura-1.png?height=300&width=300",
+      "/assets/images/kandura-1.png?height=300&width=300",
     ],
     category: "kandura",
     description:
@@ -147,7 +147,7 @@ export default function ProductPage() {
         <div className="space-y-4">
           <div className="relative aspect-square overflow-hidden rounded-lg">
             <Image
-              src={product.images[selectedImage] || "/placeholder.svg"}
+              src={product.images[selectedImage] || "/assets/images/kandura-1.png"}
               alt={product.name}
               fill
               className="object-cover"
@@ -164,7 +164,7 @@ export default function ProductPage() {
                 onClick={() => setSelectedImage(index)}
               >
                 <Image
-                  src={image || "/placeholder.svg?height=300&width=300"}
+                  src={image || "/assets/images/kandura-1.png?height=300&width=300"}
                   alt={`${product.name} - Image ${index + 1}`}
                   fill
                   className="object-cover"
@@ -359,7 +359,7 @@ export default function ProductPage() {
               id: productId,
               name: `Related Product ${productId}`,
               price: 999,
-              image: "/placeholder.svg?height=300&width=300",
+              image: "/assets/images/kandura-1.png?height=300&width=300",
             }
 
             return (
@@ -367,7 +367,7 @@ export default function ProductPage() {
                 <Card className="product-card overflow-hidden h-full">
                   <div className="relative aspect-square">
                     <Image
-                      src={relatedProduct.image || "/placeholder.svg?height=300&width=300"}
+                      src={relatedProduct.image || "/assets/images/kandura-1.png?height=300&width=300"}
                       alt={relatedProduct.name}
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
