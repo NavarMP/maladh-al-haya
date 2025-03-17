@@ -18,7 +18,7 @@ const teamMembers = [
     name: "Yamin Abdulla",
     role: "Creative Director",
     image: "/assets/images/kandura-1.avif?height=300&width=300",
-    bio: "Yamin brings her artistic vision and deep understanding of Islamic fashion to create designs that are both modest and stylish.",
+    bio: "Yamin brings his artistic vision and deep understanding of Islamic fashion to create designs that are both modest and stylish.",
   },
   {
     name: "Muhammed Nuhman",

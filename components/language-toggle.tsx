@@ -6,10 +6,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { useLanguage } from "./language-provider"
 
 export function LanguageToggle() {
-  const {
-    // language,
-    setLanguage,
-  } = useLanguage()
+  const {language, setLanguage} = useLanguage()
 
   return (
     <DropdownMenu>

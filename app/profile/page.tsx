@@ -107,8 +107,8 @@ export default function ProfilePage() {
 
   // User data - in a real app, this would come from your auth system
   const user = {
-    name: "Mohammed Ahmed",
-    email: "mohammed@example.com",
+    name: "Muhammed Navar",
+    email: "NavarMP@gmail.com",
     phone: "+971 50 123 4567",
     avatar: "/assets/images/kandura-1.avif?height=100&width=100",
   }

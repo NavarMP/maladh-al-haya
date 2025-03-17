@@ -12,7 +12,7 @@ import { Badge } from "@/components/ui/badge"
 import { Heart, ShoppingCart, ChevronRight, ChevronLeft } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useCart } from "@/hooks/use-cart"
-// import { usePWA } from "@/hooks/use-pwa"
+import { usePWA } from "@/hooks/use-pwa"
 import { motion } from "framer-motion"
 
 interface Product {
@@ -147,8 +147,7 @@ const categories: Category[] = [
         id: "15",
         name: "Embroidered Abaya",
         price: 2499,
-        image: "/assets/images/kandura-1.avif?height=300&width=300",
-        //?height=300&width=300",
+        image: "/assets/images/kandura-1.avif?height=300&width=300"
       },
     ],
   },

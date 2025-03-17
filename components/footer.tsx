@@ -1,11 +1,11 @@
 "use client"
 
 import Link from "next/link"
-// import { useLanguage } from "./language-provider"
+import { useLanguage } from "./language-provider"
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react"
 
 export default function Footer() {
-  // const { t } = useLanguage()
+  const { t } = useLanguage()
 
   return (
     <footer className="bg-muted/30 pt-12 pb-6 mt-12">
@@ -122,11 +122,11 @@ export default function Footer() {
               <li className="text-muted-foreground">Kerala, India</li>
               <li>
                 <a href="tel:+971123456789" className="text-muted-foreground hover:text-primary">
-                  +91 9746 902268
+                +971 50 123 4567
                 </a>
               </li>
               <li>
-                <a href="mailto:info@maladhalhaya.com" className="text-muted-foreground hover:text-primary">
+                <a href="mailto:navarmp@gmail.com" className="text-muted-foreground hover:text-primary">
                   navarmp@gmail.com
                 </a>
               </li>

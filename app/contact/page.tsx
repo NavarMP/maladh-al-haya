@@ -91,7 +91,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-medium">Address</h3>
-                  <p className="text-sm text-muted-foreground mt-1">123 Main Street, Kerala, India</p>
+                  <p className="text-sm text-muted-foreground mt-1">Kerala, India</p>
                 </div>
               </div>
 
@@ -102,8 +102,8 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-medium">Phone</h3>
                   <p className="text-sm text-muted-foreground mt-1">
-                    <a href="tel:+919746902268" className="hover:text-primary">
-                      +91 9746 902268
+                    <a href="tel:+971501234567" className="hover:text-primary">
+                      +971 50 123 4567
                     </a>
                   </p>
                 </div>
@@ -117,7 +117,7 @@ export default function ContactPage() {
                   <h3 className="font-medium">Email</h3>
                   <p className="text-sm text-muted-foreground mt-1">
                     <a href="mailto:navarmp@gmail.com" className="hover:text-primary">
-                      navarmp@gmail.com
+                      NavarMP@gmail.com
                     </a>
                   </p>
                 </div>
