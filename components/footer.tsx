@@ -37,15 +37,15 @@ export default function Footer() {
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </Link>
-              <Link href="https://Youtube.com/NavarMP" className="text-muted-foreground hover:text-primary">
+              <Link href="https://Youtube.com/@NavarMP" className="text-muted-foreground hover:text-primary">
                 <Youtube className="h-5 w-5" />
-                <span className="sr-only">Youtube</span>
+                <span className="sr-only">YouTube</span>
               </Link>
             </div>
           </div>
 
           <div>
-            <h3 className="font-medium mb-4">Categories</h3>
+            <h3 className="font-medium mb-4">{t("Categories")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/products/kandura" className="text-muted-foreground hover:text-primary">

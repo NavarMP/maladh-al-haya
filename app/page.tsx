@@ -2,17 +2,17 @@
 
 import type React from "react"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useLanguage } from "@/components/language-provider"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Heart, ShoppingCart, ChevronRight, ChevronLeft } from "lucide-react"
+import { Heart, ShoppingCart, ChevronRight, ChevronLeft, Download } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useCart } from "@/hooks/use-cart"
-import { usePWA } from "@/hooks/use-pwa"
+import { usePWA } from "@/hooks/use-pwa" 
 import { motion } from "framer-motion"
 
 interface Product {
@@ -156,11 +156,22 @@ const categories: Category[] = [
 export default function Home() {
   const { t } = useLanguage()
   const { addItem } = useCart()
-  // const { showInstallPrompt } = usePWA()
+  const { showInstallPrompt, isInstallable } = usePWA()
   const [currentFeaturedIndex, setCurrentFeaturedIndex] = useState(0)
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
   const featuredRef = useRef<HTMLDivElement>(null)
+  const [showPWAButton, setShowPWAButton] = useState(false)
+
+  // Check if the app is installable after component mounts
+  useEffect(() => {
+    // Show the PWA button after a delay to ensure a better user experience
+    const timer = setTimeout(() => {
+      setShowPWAButton(isInstallable)
+    }, 3000)
+    
+    return () => clearTimeout(timer)
+  }, [isInstallable])
 
   const handlePrevFeatured = () => {
     setCurrentFeaturedIndex((prev) => (prev === 0 ? featuredProducts.length - 1 : prev - 1))
@@ -202,6 +213,20 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
+      {/* PWA Install Button */}
+      {showPWAButton && (
+        <div className="fixed bottom-4 right-4 z-50 animate-bounce">
+          <Button 
+            onClick={showInstallPrompt} 
+            className="rounded-full shadow-lg bg-primary hover:bg-primary/90"
+            size="lg"
+          >
+            <Download className="mr-2 h-4 w-4" />
+            {t("installApp")}
+          </Button>
+        </div>
+      )}
+
       {/* Hero Section with Featured Product */}
       <section
         className="relative h-[80vh] overflow-hidden"
@@ -369,4 +394,3 @@ export default function Home() {
     </div>
   )
 }
-

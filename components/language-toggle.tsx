@@ -17,11 +17,25 @@ export function LanguageToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setLanguage("en")}>English</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setLanguage("ar")}>العربية</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setLanguage("ml")}>മലയാളം</DropdownMenuItem>
+        <DropdownMenuItem 
+          onClick={() => setLanguage("en")}
+          className={language === "en" ? "bg-accent" : ""}
+        >
+          English
+        </DropdownMenuItem>
+        <DropdownMenuItem 
+          onClick={() => setLanguage("ar")}
+          className={language === "ar" ? "bg-accent" : ""}
+        >
+          العربية
+        </DropdownMenuItem>
+        <DropdownMenuItem 
+          onClick={() => setLanguage("ml")}
+          className={language === "ml" ? "bg-accent" : ""}
+        >
+          മലയാളം
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )
 }
-

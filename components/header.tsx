@@ -88,6 +88,7 @@ export default function Header() {
         isScrolled ? "bg-background/80 backdrop-blur-md shadow-md py-2" : "bg-background py-4",
       )}
       style={{ transition: "transform 0.3s ease-in-out" }}
+      dir={dir()} // Call the function to get "ltr" or "rtl"
     >
       <div className="container flex items-center justify-between">
         <div className="flex items-center gap-4">
