@@ -285,7 +285,7 @@ export default function ContactPage() {
                 allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Maladh Al Haya Location"
+                title="Maladh Al Haya Location" 
                 className="w-full h-full"
               ></iframe>
             </div>
